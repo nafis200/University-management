@@ -108,6 +108,10 @@ const studentSchema = new Schema<TStudent,StudentModel,StudentMethod>({
     type: String,
     default: 'default-profile.png',
   },
+  admissionSemester:{
+    type: Schema.Types.ObjectId,
+    ref:'AcademicSemester'
+  },
   isDeleted: {
     type: Boolean,
     default: false,
