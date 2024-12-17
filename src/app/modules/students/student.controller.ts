@@ -22,7 +22,10 @@ import catchAsync from '../../utils/catchAsync';
 // };
 
 const getAllStudents = catchAsync(async (req, res) => {
-  const result = await StudentServices.getAllStudentIntoDB();
+
+  // console.log(req.query)
+
+  const result = await StudentServices.getAllStudentIntoDB(req.query);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

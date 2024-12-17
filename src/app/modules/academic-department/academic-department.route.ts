@@ -17,7 +17,7 @@ router.post(
 );
 
 router.get(
-  '/:facultyId',
+  '/:departmentId',
   AcademicDepartmentController.getSingleAcademicDepartment,
 );
 

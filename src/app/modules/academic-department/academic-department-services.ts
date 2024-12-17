@@ -6,12 +6,6 @@ import mongoose from 'mongoose';
 
 const createAcademicDepartmentIntoDB = async (payload: TAcademicDepartment) => {
 
-  const isDepartmentExists = await AcademicDepartment.findOne({name: payload.name})
-
-  if(isDepartmentExists){
-    throw new Error("This department already exists")
-  }
-
   const result = await AcademicDepartment.create(payload);
   return result;
 };

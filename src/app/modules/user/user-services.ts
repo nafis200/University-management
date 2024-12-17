@@ -70,11 +70,11 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
       return newStudent;
     
     
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error:any) {
       await session.abortTransaction()
       await session.endSession()
-      throw new AppError(404,"Some error is occurs")
+      throw new Error(error)
     }
   
 };
